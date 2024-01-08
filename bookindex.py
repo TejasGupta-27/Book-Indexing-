@@ -243,16 +243,16 @@ class RedBlackTree:
         return None 
 
     def delete(self, key):
-        # Find the node to delete
+        
         node = self.search(key)
         if node is None:
             return
 
-        # Perform the actual deletion and rebalancing
+        
         self._delete_node(node)
 
     def _delete_node(self, node):
-        # Perform the actual deletion
+        
         y = node
         y_original_color = y.get_color()
         if node.left_child is self.NIL_LEAF:
@@ -461,8 +461,7 @@ class Lexicon:
 class IndexEntry:
     def __init__(self, word):
         self.word = word
-        self.chapter_word_counts = []  # List of (chapter, word_count) tuples
-
+        self.chapter_word_counts = []  
     def add_occurrence(self, chapter, word_count):
         self.chapter_word_counts.append((chapter, word_count))
 
@@ -472,7 +471,7 @@ class IndexEntry:
                 return entry[1]
         return 0
     def __str__(self):
-        # Return a string representation of the IndexEntry
+       
         return f"Word: {self.word}, Occurrences: {self.chapter_word_counts}"
 
 class MRU:
